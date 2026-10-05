@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnglx17ehm5s4"]
+
+[node name="Track2" type="StaticBody2D" unique_id=1183051090]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=114846741]
+polygon = PackedVector2Array(0, 100, 4000, 0, 0, 0)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=566512613]
+points = PackedVector2Array(0, 100, 4000, 0, 0, 0)
+default_color = Color(0.19607843, 0.6039216, 0.1764706, 1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1630304979]
+polygon = PackedVector2Array(6500, 750, 6500, 500, 15000, 500, 15000, 750)
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=42016224]
+position = Vector2(-7, 0)
+points = PackedVector2Array(6500, 750, 6500, 500, 15000, 500, 15000, 750)
+default_color = Color(0.19607843, 0.6039216, 0.1764706, 1)

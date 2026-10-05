@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d1qiq4u0kf8ts"]
+
+[ext_resource type="Texture2D" uid="uid://dhvd6kijd0rcs" path="res://PhysicsCarGameAssets/Images/Other/SceneBG.png" id="1_60jpx"]
+
+[node name="TracknNode" type="Node2D" unique_id=285736677]
+
+[node name="Track" type="RigidBody2D" parent="." unique_id=1965503229]
+
+[node name="Sprite2D" type="Sprite2D" parent="Track" unique_id=404069621]
+texture = ExtResource("1_60jpx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track" unique_id=1173782175]
+position = Vector2(-1139, 197)

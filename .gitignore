@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+
+# Mono/C# cache (if ever used)
+.mono/
+[Bb]in/
+[Oo]bj/
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+*.tmp

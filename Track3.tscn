@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b8rrxje418gri"]
+
+[ext_resource type="Script" uid="uid://cugs4fvhoud85" path="res://track_3.gd" id="1_fncuy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7e5vo"]
+friction = 0.2
+rough = true
+
+[node name="Track3" type="StaticBody2D" unique_id=1951116152]
+physics_material_override = SubResource("PhysicsMaterial_7e5vo")
+script = ExtResource("1_fncuy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1554553342]
+position = Vector2(5, -5)
+polygon = PackedVector2Array(0, 500, 3200, 500, 3200, 650, 0, 650)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=547645482]
+points = PackedVector2Array(0, 500, 3200, 500, 3200, 650, 0, 650)
+default_color = Color(0.15686275, 0.5921569, 0.12156863, 1)

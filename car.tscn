@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cw4mye4na1myv"]
+
+[ext_resource type="Script" uid="uid://cr7uxhv435fl" path="res://Car.gd" id="1_k61xc"]
+[ext_resource type="Texture2D" uid="uid://c3ggkqxkaiv3r" path="res://PhysicsCarGameAssets/Images/Car/RedCar.png" id="1_uoj53"]
+[ext_resource type="Texture2D" uid="uid://cq5hii7ax6fi1" path="res://PhysicsCarGameAssets/Images/Car/Wheel.png" id="2_k61xc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xe1eg"]
+rough = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 25.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dni2"]
+rough = true
+
+[node name="Car" type="Node2D" unique_id=309190098]
+script = ExtResource("1_k61xc")
+
+[node name="Chassis" type="RigidBody2D" parent="." unique_id=1440216192]
+mass = 1.5
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 25)
+angular_damp_mode = 1
+
+[node name="Red Car" type="Sprite2D" parent="Chassis" unique_id=1542946513]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_uoj53")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Chassis" unique_id=1403864098]
+scale = Vector2(0.9999998, 0.9999998)
+polygon = PackedVector2Array(-90, -18, -89, 30, -93, 30, -92, 40, 88, 40, 88, 30, 86, 28, 86, -4, 59, -15, 21, -22, 2, -23, -5, -12, -37, -13, -52, -26, -82, -25)
+
+[node name="Camera2D" type="Camera2D" parent="Chassis" unique_id=480548552]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RearWheel" type="RigidBody2D" parent="." unique_id=1448576318]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_xe1eg")
+linear_damp_mode = 1
+angular_damp_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="RearWheel" unique_id=385870868]
+position = Vector2(-56.999996, 35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_k61xc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RearWheel" unique_id=755126334]
+position = Vector2(-57, 35)
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="RearJoint" type="PinJoint2D" parent="." unique_id=1171581444]
+position = Vector2(-57, 35)
+node_a = NodePath("../Chassis")
+node_b = NodePath("../RearWheel")
+
+[node name="FrontWheel" type="RigidBody2D" parent="." unique_id=2150285]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_8dni2")
+linear_damp_mode = 1
+angular_damp_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontWheel" unique_id=1101253709]
+position = Vector2(45.999996, 37)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_k61xc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontWheel" unique_id=1339098140]
+position = Vector2(46, 37)
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="FrontJoint" type="PinJoint2D" parent="." unique_id=1689651430]
+position = Vector2(46, 37)
+node_a = NodePath("../Chassis")
+node_b = NodePath("../FrontWheel")

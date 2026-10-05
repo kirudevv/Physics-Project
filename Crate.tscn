@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dpyg1v55ptyhp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrivr"]
+friction = 0.2
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(60, 60)
+
+[node name="Crate" type="RigidBody2D" unique_id=1954732398]
+mass = 2.5
+physics_material_override = SubResource("PhysicsMaterial_xrivr")
+continuous_cd = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1867952048]
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(5.8719515e-06, 0.5868927, 0.7715535, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1809403532]
+custom_minimum_size = Vector2(60, 60)
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+color = Color(0.6901961, 0.44705883, 0.22745098, 1)

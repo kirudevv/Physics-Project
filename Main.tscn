@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://c8j43xx2qp6fl"]
+
+[ext_resource type="Script" uid="uid://crhtewcnsm2jc" path="res://Main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dyhdmwkb6325g" path="res://Track.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://cw4mye4na1myv" path="res://car.tscn" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://38lxqtiifkpa" path="res://PhysicsCarGameAssets/Images/Characters/Head2.png" id="4_cm0pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(120, 450)
+
+[node name="Main" type="Node2D" unique_id=728055290]
+position = Vector2(-2, 135)
+script = ExtResource("1_r0du0")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1027832316]
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=485786559]
+custom_minimum_size = Vector2(480, 20)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 260.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer" unique_id=419997659]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="QuestionLabel" type="Label" parent="UI/PanelContainer/VBoxContainer" unique_id=454434073]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Q: Question"
+
+[node name="FormulaHint" type="Label" parent="UI/PanelContainer/VBoxContainer" unique_id=1546056100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.8627451, 0.6509804, 1)
+text = "Hint: Hint"
+
+[node name="HSeparator" type="HSeparator" parent="UI/PanelContainer/VBoxContainer" unique_id=445575733]
+layout_mode = 2
+
+[node name="CardsContainer" type="HBoxContainer" parent="UI/PanelContainer/VBoxContainer" unique_id=1092957324]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="ChoiceA" type="Button" parent="UI/PanelContainer/VBoxContainer/CardsContainer" unique_id=1856625783]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "Choice A
+"
+
+[node name="ChoiceB" type="Button" parent="UI/PanelContainer/VBoxContainer/CardsContainer" unique_id=1401144661]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "Choice B
+"
+
+[node name="ChoiceC" type="Button" parent="UI/PanelContainer/VBoxContainer/CardsContainer" unique_id=1709417962]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "Choice C
+"
+
+[node name="HSeparator2" type="HSeparator" parent="UI/PanelContainer/VBoxContainer" unique_id=1685558172]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="UI/PanelContainer/VBoxContainer" unique_id=2134781870]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Select a card to launch"
+
+[node name="ResetBtn" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=174863317]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/h_separation = 12
+text = "RESET
+
+"
+
+[node name="NextLevelBtn" type="Button" parent="UI/PanelContainer/VBoxContainer" unique_id=1993349228]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/h_separation = 12
+text = "NEXT
+
+
+"
+
+[node name="Track" parent="." unique_id=239536429 instance=ExtResource("1_uu6xs")]
+
+[node name="Car" parent="." unique_id=309190098 instance=ExtResource("2_r0du0")]
+position = Vector2(95, 437)
+
+[node name="GoalArea" type="Area2D" parent="." unique_id=660626568]
+position = Vector2(-9, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalArea" unique_id=307720889]
+position = Vector2(2132, 278)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815791125]
+position = Vector2(2125, 465)
+texture = ExtResource("4_cm0pq")
